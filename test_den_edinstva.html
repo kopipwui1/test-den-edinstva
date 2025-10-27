@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тест к Дню народного единства</title>
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ffe4b5, #ffdab9, #fff8dc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* выравнивание сверху */
+  padding-top: 40px; /* отступ сверху */
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+h1 {
+  color: #d35400;
+  font-size: 42px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Вопросы */
+.question {
+  display: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 25px 30px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s;
+}
+
+.question.active {
+  display: block;
+}
+
+h2 {
+  color: #e67e22;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Кнопки */
+button.answer {
+  display: block;
+  width: 80%;
+  margin: 12px auto;
+  padding: 12px 0;
+  font-size: 20px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.2s;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+button.answer:hover {
+  background-color: #e67e22;
+  transform: scale(1.05);
+  box-shadow: 0 7px 15px rgba(0,0,0,0.2);
+}
+
+button.correct {
+  background-color: #27ae60 !important;
+}
+
+button.wrong {
+  background-color: #c0392b !important;
+}
+
+/* Изображения */
+img.symbol {
+  width: 150px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+
+/* Результат */
+.result {
+  font-size: 28px;
+  color: #27ae60;
+  margin-top: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>🎉 Тест к Дню народного единства 🎉</h1>
+
+<!-- Вопросы -->
+<div class="question active" id="q1">
+  <h2>Когда отмечается День народного единства?</h2>
+  <button class="answer">12 июня</button>
+  <button class="answer" data-correct="true">4 ноября</button>
+  <button class="answer">9 мая</button>
+</div>
+
+<div class="question" id="q2">
+  <h2>Какой символ изображён на гербе России?</h2>
+  <button class="answer" data-correct="true">Двуглавый орёл</button>
+  <button class="answer">Медведь</button>
+  <button class="answer">Звезда</button>
+</div>
+
+<div class="question" id="q3">
+  <h2>Что объединяет всех людей России?</h2>
+  <button class="answer">Только еда</button>
+  <button class="answer" data-correct="true">Дружба и общие традиции</button>
+  <button class="answer">Праздники только в школе</button>
+</div>
+
+<div class="question" id="q4">
+  <h2>Какая фигура символизирует единство народа?</h2>
+  <button class="answer">Звезда</button>
+  <button class="answer" data-correct="true">Руки вместе</button>
+  <button class="answer">Книга</button>
+</div>
+
+<div class="question" id="q5">
+  <h2>Какой цвет есть на флаге России?</h2>
+  <button class="answer">Жёлтый, синий, красный</button>
+  <button class="answer">Зелёный, белый, красный</button>
+  <button class="answer" data-correct="true">Белый, синий, красный</button>
+</div>
+
+<div class="question" id="q6">
+  <h2>Какой город празднует День народного единства особенно ярко?</h2>
+  <button class="answer">Санкт-Петербург</button>
+  <button class="answer" data-correct="true">Москва</button>
+  <button class="answer">Самара</button>
+</div>
+
+<div class="question" id="q7">
+  <h2>Кто помог людям защитить город в старые времена?</h2>
+  <button class="answer" data-correct="true">Герои России</button>
+  <button class="answer">Иван Грозный</button>
+  <button class="answer">Пётр I</button>
+</div>
+
+<div class="question" id="q8">
+  <h2>Что является символом дружбы народов России?</h2>
+  <button class="answer" data-correct="true">Руки вместе</button>
+  <button class="answer">Флаг с гербом</button>
+  <button class="answer">Кремлёвская стена</button>
+</div>
+
+<div class="question" id="q9">
+  <h2>Какая традиция связана с праздником?</h2>
+  <button class="answer">Украшение ёлки</button>
+  <button class="answer" data-correct="true">Празднование дружбы народов и истории России</button>
+  <button class="answer">Катание на санках</button>
+</div>
+
+<div class="question" id="q10">
+  <h2>Что нужно делать, чтобы народ был единым?</h2>
+  <button class="answer">Игнорировать других</button>
+  <button class="answer" data-correct="true">Дружить и помогать друг другу</button>
+  <button class="answer">Ссориться</button>
+</div>
+
+<div class="result" id="result"></div>
+</div>
+
+<script>
+const answers = document.querySelectorAll(".answer");
+let score = 0;
+let allowNext = false;
+
+answers.forEach(button => {
+  button.addEventListener("click", () => {
+    if(allowNext) return;
+    allowNext = true;
+
+    if(button.dataset.correct === "true") {
+      button.classList.add("correct");
+      score++;
+    } else {
+      button.classList.add("wrong");
+      const currentQuestion = button.closest(".question");
+      currentQuestion.querySelectorAll(".answer").forEach(btn => {
+        if(btn.dataset.correct === "true") btn.classList.add("correct");
+      });
+    }
+
+    setTimeout(() => {
+      const currentQuestion = button.closest(".question");
+      const nextQuestion = currentQuestion.nextElementSibling;
+      currentQuestion.classList.remove("active");
+      if(nextQuestion && nextQuestion.classList.contains("question")) {
+        nextQuestion.classList.add("active");
+      } else {
+        document.getElementById("result").innerHTML = `🎉 Тест завершён! Вы набрали ${score} из 10 очков! 🎉`;
+      }
+      allowNext = false;
+    }, 1000);
+  });
+});
+</script>
+
+</body>
+</html>
